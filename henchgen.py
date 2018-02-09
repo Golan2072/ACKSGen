@@ -1,6 +1,6 @@
 # henchgen.py
 # Henchman generator for the Adventurer Conqueror King System (ACKS).
-# v0.2, February 9th, 2018.
+# v0.2, February 9th 2018.
 # This is open source code, feel free to use it for any purpose.
 # Contact the author at golan2072@gmail.com.
 

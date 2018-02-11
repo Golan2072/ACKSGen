@@ -1,6 +1,6 @@
 # henchgen.py
 # Henchman generator for the Adventurer Conqueror King System (ACKS).
-# v0.2, February 9th 2018.
+# v0.25, February 1th, 2018.
 # This is open source code, feel free to use it for any purpose.
 # Contact the author at golan2072@gmail.com.
 
@@ -126,13 +126,14 @@ class character():
 		self.hp=henchgenlib.hp_gen(self.cclass, self.conmod, self.level) #generate hit points
 		self.proficiencies=henchgenlib.profgen(self.intmod, self.level, self.cclass) #generate proficiencies
 		self.weapon=henchgenlib.weapon_gen(self.cclass) #generate weapon
+		self.armor=henchgenlib.armor_gen(self.cclass) #generate armor
 			
 		
 def test():
 	"""
 	testing the object and basic functions/methods
 	"""
-	character1=character(1)
+	character1=character(3)
 	#i=0
 	#for i in range(0, len(character1.attribute_list)):
 	#	character1.attribute_list[i]=str(character1.attribute_list[i])	
@@ -142,7 +143,7 @@ def test():
 	print ("STR: %s DEX: %s CON: %s INT: %s WIS: %s CHA: %s" %(character1.strength, character1.dexterity, character1.constitution, character1.intelligence, character1.wisdom, character1.charisma))
 	proflist=", ".join(character1.proficiencies)
 	print ("Proficiencies: %s" %(proflist))
-	print (character1.weapon)
+	print ("%s, %s" %(character1.weapon, character1.armor))
 
 	"""	
 def main():

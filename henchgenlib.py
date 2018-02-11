@@ -1,6 +1,6 @@
 # henchgenlib.py
 # ACKS henchman and hireling generator data and rules library
-# v0.2, February 9th 2018.
+# v0.25, February 11th, 2018.
 # This is open source code, feel free to use it for any purpose.
 # Contact the author at golan2072@gmail.com.
 
@@ -242,78 +242,6 @@ def general_proficiency():
 	generate general proficiencies
 	"""
 	return random_choice(["Alchemy", "Animal Husbandry", "Animal Training", "Art", "Bargaining", "Caving", "Collegiate Wizardry", "Craft", "Diplomacy", "Disguise", "Endurance", "Engineering", "Gambling", "Healing", "Intimidation", "Knowledge", "Labor", "Language", "Leadership", "Lip Reading", "Manual of Arms", "Mapping", "Military Strategy", "Mimicry", "Naturalism", "Navigation", "Performance", "Possession", "Riding", "Seafaring", "Seduction", "Siege Engineering", "Signalling", "Survival", "Theology", "Tracking", "Trapping"])
-
-def assassin_proficiency():
-	"""
-	generate assassin proficiencies
-	"""
-	return random_choice(["Acrobatics", "Alchemy", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "Contortionism", "Disguise", "Eavesdropping", "Fighting Style", "Gambling", "Intimidation", "Mimicry", "Precise Shooting", "Running", "Seduction", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Trap Finding", "Weapon Finesse", "Weapon Focus"])	
-
-def bard_proficiency():
-	"""
-	generate bard proficiencies
-	"""
-	return random_choice(["Acrobatics", "Alchemy", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Command", "Diplomacy", "Eavesdropping", "Elven Bloodline", "Fighting Style", "Healing", "Knowledge", "Language", "Leadership", "Lip Reading", "Magical Engineering", "Magical Music", "Mimicry", "Mystic Aura", "Performance", "Precise Shooting", "Prestidigitation", "Running", "Seduction", "Skirmishing", "Swashbuckling", "Weapon Finesse", "Weapon Focus"])
-	
-def bladedabcer_proficiency():
-	"""
-	generate bladedancer proficiencies
-	"""
-	return random_choice(["Acrobatics", "Apostasy", "Battle Magic", "Beast Friendship", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (trip)", "Contemplation", "Diplomacy", "Divine Blessing", "Divine Health", "Fighting Style", "Laying on Hands", "Magical Music", "Martial Training", "Performance", "Prestidigitation", "Prophecy", "Quiet Magic", "Righteous Turning", "Running", "Seduction", "Skirmishing", "Swashbuckling", "Theology", "Unflappable Casting", "Weapon Finesse", "Weapon Focus"])
-	
-def cleric_proficiency():
-	"""
-	generate cleric proficiencies
-	"""
-	return random_choice(["Apostasy", "Battle Magic", "Beast Friendship", "Combat Trickery (force back)", "Combat Trickery (overrun)", "Combat Trickery (sunder)", "Command", "Contemplation", "Diplomacy", "Divine Blessing", "Divine Health", "Fighting Style", "Healing", "Knowledge (history)", "Laying on Hands", "Leadership", "Loremastery", "Magical Engineering", "Martial Training", "Prestidigitation", "Profession (judge)", "Prophecy", "Quiet Magic", "Righteous Turning", "Sensing Evil", "Sensing Power", "Theology", "Unflappable Casting", "Weapon Focus"])
-	
-def explorer_proficiency():
-	"""
-	generate explorer proficiencies
-	"""
-	return random_choice(["Alertness", "Ambushing", "Beast Friendship", "Blind Fighting", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (knock down)", "Eavesdropping", "Endurance", "Fighting Style", "Land Surveying", "Mapping", "Mountaineering", "Naturalism", "Navigation", "Passing Without Trace", "Precise Shooting", "Riding", "Running", "Seafaring", "Skirmishing", "Sniping", "Survival", "Swashbuckling", "Trapping", "Weapon Finesse", "Weapon Focus"])
-
-def fighter_proficiency():
-	"""
-	generate fighter proficiencies
-	"""
-	return random_choice(["Acrobatics", "Alertness", "Berserkergang", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (force back)", "Combat Trickery (knock down)", "Combat Trickery (sunder)", "Command", "Dungeon Bashing", "Endurance", "Fighting Style", "Gambling", "Intimidation", "Leadership", "Manual of Arms", "Military Strategy", "Precise Shooting", "Riding", "Running", "Siege Engineering", "Skirmishing", "Survival", "Swashbuckling", "Weapon Finesse", "Weapon Focus"])	
-
-def mage_proficiency():
-	"""
-	generate mage proficiencies
-	"""
-	return random_choice(["Alchemy", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Collegiate Wizardry", "Craft", "Diplomacy", "Elementalism", "Elven Bloodline", "Engineering", "Familiar", "Healing", "Illusion Resistance", "Knowledge", "Language", "Loremastery", "Magical Engineering", "Mapping", "Mystic Aura", "Naturalism", "Quiet Magic", "Performance", "Prestidigitation", "Profession", "Sensing Power", "Transmogrification", "Soothsaying", "Unflappable Casting"])
-	
-def thief_proficiency():
-	"""
-	generate thief proficiencies
-	"""
-	return random_choice(["Acrobatics", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "contortionism", "Diplomacy", "Fighting Style", "Gambling", "Intimidation", "Lip Reading", "Lockpicking", "Mapping", "Precise Shooting", "Riding", "Running", "Seafaring", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Trap Finding", "Weapon Finesse", "Weapon Focus"])
-
-def craftpriest_proficiency():
-	"""
-	generate craftpriest proficiencies
-	"""
-	return random_choice(["Alchemy", "Art", "Battle Magic", "Caving", "Collegiate Wizardry", "Contemplation", "Craft", "Diplomacy", "Divine Blessing", "Divine Health", "Dwarven Brewing", "Endurance", "Engineering", "Fighting Style", "Goblin-Slaying", "Healing", "Illusion Resistance", "Knowledge", "Laying on Hands", "Loremastery", "Magical Engineering", "Mapping", "Performance (chanting)", "Prestidigitation", "Profession (judge)", "Prophecy", "Quiet Magic", "Righteous Turning", "Sensing Evil", "Siege Engineering", "Theology", "Unflappable Casting", "Weapon Focus"])
-
-def vaultguard_proficiency():
-	"""
-	generate vaultguard proficiencies
-	"""
-	return random_choice(["Alertness", "Berserkergang", "Blind Fighting", "Caving", "Combat Reflexes", "Combat Trickery (force back)", "Combat Trickery (knock down)", "Combat Trickery (overrun)", "Combat Trickery (sunder)", "Combat Trickery (wrestle)", "Command", "Craft", "Dungeon Bashing", "Dwarven Brewing", "Endurance", "Engineering", "Fighting Style", "Gambling", "Goblin-Slaying", "Illusion Resistance", "Intimidation", "Land Surveying", "Leadership", "Mapping", "Manual of Arms", "Military Strategy", "Mountaineering", "Siege Engineering", "Weapon Focus"])
-	
-def nightblade_proficiency():
-	"""
-	generate nightblade proficiencies
-	"""
-	return random_choice(["Alchemy", "Alertness", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "Contortionism", "Elementalism", "Familiar", "Fighting Style", "Intimidation", "Magical Engineering", "Mystic Aura", "Passing Without Trace", "Precise Shooting", "Prestidigitation", "Quiet Magic", "Running", "Sensing Power", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Unflappable Casting", "Trap Finding", "Wakefulness", "Weapon Focus", "Weapon Finesse"])
-
-def spellsword_proficiency():
-	"""
-	generate spellsword proficiencies
-	"""
-	return random_choice(["Acrobatics", "Alertness", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (knock down)", "Command", "Elementalism", "Familiar", "Fighting Style", "Leadership", "Loremastery", "Magical Engineering", "Magical Music", "Mystic Aura", "Naturalism", "Passing Without Trace", "Quiet Magic", "Precise Shooting", "Prestidigitation", "Running", "Sensing Power", "Skirmishing", "Soothsaying", "Swashbuckler", "Unflappable Casting", "Wakefulness", "Weapon Focus", "Weapon Finesse"])
 	
 def genprofgen(level, intmod): #input level and intelligence modifier
 	"""
@@ -333,36 +261,55 @@ def genprofgen(level, intmod): #input level and intelligence modifier
 		else:
 			proflist=[general_proficiency()]
 	return proflist #output general proficiency list
+
+def classprof(level, cclass): #input character level
+	"""
+	generate class proficiencies
+	"""
+	proflist=[]
+	if cclass=="assassin":
+		profs=["Acrobatics", "Alchemy", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "Contortionism", "Disguise", "Eavesdropping", "Fighting Style", "Gambling", "Intimidation", "Mimicry", "Precise Shooting", "Running", "Seduction", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Trap Finding", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="bard":
+		profs=["Acrobatics", "Alchemy", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Command", "Diplomacy", "Eavesdropping", "Elven Bloodline", "Fighting Style", "Healing", "Knowledge", "Language", "Leadership", "Lip Reading", "Magical Engineering", "Magical Music", "Mimicry", "Mystic Aura", "Performance", "Precise Shooting", "Prestidigitation", "Running", "Seduction", "Skirmishing", "Swashbuckling", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="bladedancer":
+		profs=["Acrobatics", "Apostasy", "Battle Magic", "Beast Friendship", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (trip)", "Contemplation", "Diplomacy", "Divine Blessing", "Divine Health", "Fighting Style", "Laying on Hands", "Magical Music", "Martial Training", "Performance", "Prestidigitation", "Prophecy", "Quiet Magic", "Righteous Turning", "Running", "Seduction", "Skirmishing", "Swashbuckling", "Theology", "Unflappable Casting", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="cleric":
+		profs=["Apostasy", "Battle Magic", "Beast Friendship", "Combat Trickery (force back)", "Combat Trickery (overrun)", "Combat Trickery (sunder)", "Command", "Contemplation", "Diplomacy", "Divine Blessing", "Divine Health", "Fighting Style", "Healing", "Knowledge (history)", "Laying on Hands", "Leadership", "Loremastery", "Magical Engineering", "Martial Training", "Prestidigitation", "Profession (judge)", "Prophecy", "Quiet Magic", "Righteous Turning", "Sensing Evil", "Sensing Power", "Theology", "Unflappable Casting", "Weapon Focus"]
+	if cclass=="explorer":
+		profs=["Alertness", "Ambushing", "Beast Friendship", "Blind Fighting", "Climbing", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (knock down)", "Eavesdropping", "Endurance", "Fighting Style", "Land Surveying", "Mapping", "Mountaineering", "Naturalism", "Navigation", "Passing Without Trace", "Precise Shooting", "Riding", "Running", "Seafaring", "Skirmishing", "Sniping", "Survival", "Swashbuckling", "Trapping", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="fighter":
+		profs=["Acrobatics", "Alertness", "Berserkergang", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (force back)", "Combat Trickery (knock down)", "Combat Trickery (sunder)", "Command", "Dungeon Bashing", "Endurance", "Fighting Style", "Gambling", "Intimidation", "Leadership", "Manual of Arms", "Military Strategy", "Precise Shooting", "Riding", "Running", "Siege Engineering", "Skirmishing", "Survival", "Swashbuckling", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="mage":
+		profs=["Alchemy", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Collegiate Wizardry", "Craft", "Diplomacy", "Elementalism", "Elven Bloodline", "Engineering", "Familiar", "Healing", "Illusion Resistance", "Knowledge", "Language", "Loremastery", "Magical Engineering", "Mapping", "Mystic Aura", "Naturalism", "Quiet Magic", "Performance", "Prestidigitation", "Profession", "Sensing Power", "Transmogrification", "Soothsaying", "Unflappable Casting"]
+	if cclass=="thief":
+		profs=["Acrobatics", "Alertness", "Arcane Dabbling", "Blind Fighting", "Bribery", "Cat Burglary", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "contortionism", "Diplomacy", "Fighting Style", "Gambling", "Intimidation", "Lip Reading", "Lockpicking", "Mapping", "Precise Shooting", "Riding", "Running", "Seafaring", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Trap Finding", "Weapon Finesse", "Weapon Focus"]
+	if cclass=="craftpriest":
+		profs=["Alchemy", "Art", "Battle Magic", "Caving", "Collegiate Wizardry", "Contemplation", "Craft", "Diplomacy", "Divine Blessing", "Divine Health", "Dwarven Brewing", "Endurance", "Engineering", "Fighting Style", "Goblin-Slaying", "Healing", "Illusion Resistance", "Knowledge", "Laying on Hands", "Loremastery", "Magical Engineering", "Mapping", "Performance (chanting)", "Prestidigitation", "Profession (judge)", "Prophecy", "Quiet Magic", "Righteous Turning", "Sensing Evil", "Siege Engineering", "Theology", "Unflappable Casting", "Weapon Focus"]
+	if cclass=="vaultguard":
+		profs=["Alertness", "Berserkergang", "Blind Fighting", "Caving", "Combat Reflexes", "Combat Trickery (force back)", "Combat Trickery (knock down)", "Combat Trickery (overrun)", "Combat Trickery (sunder)", "Combat Trickery (wrestle)", "Command", "Craft", "Dungeon Bashing", "Dwarven Brewing", "Endurance", "Engineering", "Fighting Style", "Gambling", "Goblin-Slaying", "Illusion Resistance", "Intimidation", "Land Surveying", "Leadership", "Mapping", "Manual of Arms", "Military Strategy", "Mountaineering", "Siege Engineering", "Weapon Focus"]
+	if cclass=="nightblade":
+		profs=["Alchemy", "Alertness", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (incapacitate)", "Contortionism", "Elementalism", "Familiar", "Fighting Style", "Intimidation", "Magical Engineering", "Mystic Aura", "Passing Without Trace", "Precise Shooting", "Prestidigitation", "Quiet Magic", "Running", "Sensing Power", "Skirmishing", "Skulking", "Sniping", "Swashbuckling", "Unflappable Casting", "Trap Finding", "Wakefulness", "Weapon Focus", "Weapon Finesse"]
+	if cclass=="spellsword":
+		profs=["Acrobatics", "Alertness", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (knock down)", "Command", "Elementalism", "Familiar", "Fighting Style", "Leadership", "Loremastery", "Magical Engineering", "Magical Music", "Mystic Aura", "Naturalism", "Passing Without Trace", "Quiet Magic", "Precise Shooting", "Prestidigitation", "Running", "Sensing Power", "Skirmishing", "Soothsaying", "Swashbuckler", "Unflappable Casting", "Wakefulness", "Weapon Focus", "Weapon Finesse"]
+	if level in [1,2] and cclass in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
+		proflist.append(random_choice(profs))
+	elif level in [1, 2, 3] and cclass not in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
+		proflist.append(random_choice(profs))
+	if level in [3, 4] and cclass in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
+		for i in range (0,2):
+			proflist.append(random_choice(profs))
+	elif level==4 and cclass not in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
+		for i in range (0,2):
+			proflist.append(random_choice(profs))
+	proficiencies=", ".join(proflist)
+	return proficiencies #returns a list of class proficiencies
 	
 def profgen(intmod, level, cclass): #input character's intelligence modifier, level, and character class
 	"""
 	generate proficiency list
 	"""
 	proflist=genprofgen(level, intmod)
-	if cclass=="assassin":
-		proflist.append (assassin_proficiency())
-	elif cclass=="bard":
-		proflist.append (bard_proficiency())
-	elif cclass=="bladedancer":
-		proflist.append (bladedancer_proficiency())
-	elif cclass=="cleric":
-		proflist.append (cleric_proficiency())
-	elif cclass=="explorer":
-		proflist.append (explorer_proficiency())
-	elif cclass=="fighter":
-		proflist.append (fighter_proficiency())
-	elif cclass=="mage":
-		proflist.append (mage_proficiency())
-	elif cclass=="thief":
-		proflist.append (thief_proficiency())
-	elif cclass=="craftpriest":
-		proflist.append (craftpriest_proficiency())
-	elif cclass=="vaultguard":
-		proflist.append (vaultguard_proficiency())
-	elif cclass=="nightblade":
-		proflist.append (nightblade_proficiency())
-	elif cclass=="spellsword":
-		proflist.append (spellsword_proficiency())
+	proflist.append(classprof(level, cclass))
 	return proflist #output proficiency list
 
 def hp_gen(cclass, conmod, level): #input character class, constitution modifier, and level
@@ -404,3 +351,18 @@ def weapon_gen (cclass): #input character class
 		return random_choice(["Battle Axe", "Battle Axe", "Battle Axe", "Great Axe", "Great Axe", "Great Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Shortbow", "Club", "Flail", "Mace", "Warhammer", "Warhammer", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Short Sword", "Whip"])
 	if cclass=="craftpriest":
 		return random_choice(["Battle Axe", "Great Axe", "Hand Axe", "Flail", "Mace", "Morning Star", "Warhammer"])
+
+def armor_gen (cclass): #input character class
+	"""
+	armor generation
+	"""
+	if cclass in ["fighter", "spellsword", "cleric", "vaultguard", "craftpriest"]:
+		return random_choice(["Leather Armor", "Scale Mail", "Scale Mail", "Chain Mail", "Chain Mail", "Chain Mail", "Banded Plate"])
+	if cclass in ["thief", "bard", "assassin", "bladedancer", "nightblade"]:
+		return random_choice(["Clothes", "Clothes", "Hide Armor", "Leather Armor" ])
+	if cclass == "explorer":
+		return random_choice (["clothes", "Hide Armor", "Leather Armor", "Scale Mail", "Chain Mail"])
+	if cclass == "mage":
+		return "Robes"
+	else:
+		return "Clothes"

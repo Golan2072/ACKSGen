@@ -89,7 +89,7 @@ def main():
         outp.close() #close file
 """
 
-def individualCharGen(levelNumber, levelDie, characterLevel):
+def individual_chargen(levelNumber, levelDie, characterLevel):
     charstring = ""
     for i in range (0, stellagama.dice(levelNumber, levelDie)):
         character1=character(characterLevel)
@@ -108,11 +108,11 @@ def chargen (level0number, level0die, level1number, level1die, level2number, lev
     """
     charstring = ""
 
-    charstring += individualCharGen(level0number, level0die, 0)
-    charstring += individualCharGen(level1number, level1die, 1)
-    charstring += individualCharGen(level2number, level2die, 2)
-    charstring += individualCharGen(level3number, level3die, 3)
-    charstring += individualCharGen(level4number, level4die, 4)
+    charstring += individual_chargen(level0number, level0die, 0)
+    charstring += individual_chargen(level1number, level1die, 1)
+    charstring += individual_chargen(level2number, level2die, 2)
+    charstring += individual_chargen(level3number, level3die, 3)
+    charstring += individual_chargen(level4number, level4die, 4)
     return charstring
 
 def market_gen (market:int): #input ACKS market class

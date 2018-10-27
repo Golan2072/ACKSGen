@@ -7,7 +7,7 @@
 #import modules
 import random
 import string
-import stellagama
+from RPG import stellagama
 
 def attribute_modifier(attribute): #input ability score
 	"""
@@ -48,9 +48,9 @@ def name_gen(sex): #input character sex
 	"""
 	name=""
 	if sex=="male":
-		return stellagama.random_line("malenames.txt") #output random male name
+		return stellagama.random_line("RPG/malenames.txt") #output random male name
 	elif sex=="female":
-		return stellagama.random_line("femalenames.txt") #output random female name
+		return stellagama.random_line("RPG/femalenames.txt") #output random female name
 	else:	#in case of wrong input
 		return "Tokay" #output placeholder
 

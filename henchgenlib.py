@@ -205,6 +205,8 @@ def weapon_gen (cclass): #input character class
 		return stellagama.random_choice(["Battle Axe", "Battle Axe", "Battle Axe", "Great Axe", "Great Axe", "Great Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Shortbow", "Club", "Flail", "Mace", "Warhammer", "Warhammer", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Short Sword", "Whip"])
 	if cclass=="craftpriest":
 		return stellagama.random_choice(["Battle Axe", "Great Axe", "Hand Axe", "Flail", "Mace", "Morning Star", "Warhammer"])
+	else:
+		return stellagama.random_choice(["Staff", "Staff", "Staff", "Staff", "Club", "Club", "Club", "Club", "Dagger", "Dagger", "Dart", "Pitchfork", "Pitchfork", "Pitchfork", "Meat Cleaver", "Crowbar", "A Really Heavy Bell"])
 
 def armor_gen (cclass): #input character class
 	"""

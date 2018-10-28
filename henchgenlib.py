@@ -7,7 +7,7 @@
 #import modules
 import random
 import string
-from RPG import stellagama
+import stellagama
 
 def attribute_modifier(attribute): #input ability score
 	"""
@@ -48,9 +48,9 @@ def name_gen(sex): #input character sex
 	"""
 	name=""
 	if sex=="male":
-		return stellagama.random_line("RPG/malenames.txt") #output random male name
+		return stellagama.random_line("malenames.txt") #output random male name
 	elif sex=="female":
-		return stellagama.random_line("RPG/femalenames.txt") #output random female name
+		return stellagama.random_line("femalenames.txt") #output random female name
 	else:	#in case of wrong input
 		return "Tokay" #output placeholder
 
@@ -206,7 +206,7 @@ def weapon_gen (cclass): #input character class
 	if cclass=="craftpriest":
 		return stellagama.random_choice(["Battle Axe", "Great Axe", "Hand Axe", "Flail", "Mace", "Morning Star", "Warhammer"])
 	else:
-		return stellagama.random_choice(["Staff", "Staff", "Staff", "Staff", "Club", "Club", "Club", "Club", "Dagger", "Dagger", "Dart", "Pitchfork", "Pitchfork", "Pitchfork", "Meat Cleaver", "Crowbar", "A Really Heavy Bell"])
+		return stellagama.random_choice(["Staff", "Staff", "Staff", "Staff", "Club", "Club", "Club", "Club", "Dagger", "Dagger", "Dagger", "Dagger", "Dart", "Dart", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Meat Cleaver", "Meat Cleaver", "Crowbar", "Crowbar", "Shovel", "A Really Heavy Bell"])
 
 def armor_gen (cclass): #input character class
 	"""

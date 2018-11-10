@@ -1,6 +1,6 @@
 # henchgenlib.py
 # ACKS henchman and hireling generator data and rules library
-# v0.25, February 11th, 2018.
+# v1.1, November 10th, 2018.
 # This is open source code, feel free to use it for any purpose.
 # Contact the author at golan2072@gmail.com.
 
@@ -28,14 +28,14 @@ def sex_gen():
 	else:
 		return "androgynous"
 
-def race_gen(con):
+def race_gen(con, intel):
 	"""
 	race-generating function
 	"""
 	roll=stellagama.dice(1,6)
 	if roll in [1, 2, 3, 4]:
 		return "human"
-	elif roll==5:
+	elif roll==5 and intel>=9:
 		return "elf"
 	if roll==6 and con>=9:
 		return "dwarf"
@@ -58,13 +58,13 @@ def charclass(STR, DEX, CON, INT, WIS, CHA, sex, race, level): #choses character
 	attribute_list=[STR, DEX, CON, INT, WIS, CHA]
 	profession="fighter"
 	if level==0:
-		profession="normal person"
+		profession=random.choice(["mercenary", "peasant", random.choice(["thug", "hunter", "soldier", "town guard", "savage", "highwayman", "petty noble"]), random.choice(["alchemist", "animal trainer", "armorer", "barber", "beggar", "blacksmith", "butcher", "cheesemaker", "cobbler", "conman", "cooper", "cutpurse", "fletcher", "folk healer", "fortune-teller", "gambler", "gravedigger", "herbalist", "jeweler", "locksmith", "lumberjack", "mariner", "mendicant", "merchant", "miller", "minstrel", "rope maker", "prostitute", "scribe", "shepherd", "tailor", "tax collector", "trapper", "village idiot", "urchin", "weaver"])])
 	else:
 		if race=="human":
 			if STR==max(attribute_list):
-				profession=stellagama.random_choice(["fighter", "explorer"])
+				profession=random.choice(["fighter", "explorer"])
 			elif DEX==max(attribute_list):
-				profession=stellagama.random_choice(["thief", "assassin"])
+				profession=random.choice(["thief", "assassin"])
 			elif CON==max(attribute_list):
 				profession="fighter"
 			elif INT==max(attribute_list):
@@ -72,7 +72,7 @@ def charclass(STR, DEX, CON, INT, WIS, CHA, sex, race, level): #choses character
 			elif WIS==max(attribute_list) and sex=="male":
 				profession="cleric"
 			elif WIS==max(attribute_list) and sex=="female":
-				stellagama.random_choice(["bladedancer", "bladedancer", "cleric"])
+				random.choice(["bladedancer", "bladedancer", "cleric"])
 			elif CHA==max(attribute_list):
 				profession="bard"
 			else:
@@ -95,7 +95,7 @@ def general_proficiency():
 	"""
 	generate general proficiencies
 	"""
-	return stellagama.random_choice(["Alchemy", "Animal Husbandry", "Animal Training", "Art", "Bargaining", "Caving", "Collegiate Wizardry", "Craft", "Diplomacy", "Disguise", "Endurance", "Engineering", "Gambling", "Healing", "Intimidation", "Knowledge", "Labor", "Language", "Leadership", "Lip Reading", "Manual of Arms", "Mapping", "Military Strategy", "Mimicry", "Naturalism", "Navigation", "Performance", "Possession", "Riding", "Seafaring", "Seduction", "Siege Engineering", "Signalling", "Survival", "Theology", "Tracking", "Trapping"])
+	return random.choice(["Alchemy", "Animal Husbandry", "Animal Training", "Art", "Bargaining", "Caving", "Collegiate Wizardry", "Craft", "Diplomacy", "Disguise", "Endurance", "Engineering", "Gambling", "Healing", "Intimidation", "Knowledge", "Labor", "Language", "Leadership", "Lip Reading", "Manual of Arms", "Mapping", "Military Strategy", "Mimicry", "Naturalism", "Navigation", "Performance", "Possession", "Riding", "Seafaring", "Seduction", "Siege Engineering", "Signalling", "Survival", "Theology", "Tracking", "Trapping"])
 	
 def genprofgen(level, intmod): #input level and intelligence modifier
 	"""
@@ -146,15 +146,15 @@ def classprof(level, cclass): #input character level
 	if cclass=="spellsword":
 		profs=["Acrobatics", "Alertness", "Battle Magic", "Beast Friendship", "Black Lore of Zahar", "Blind Fighting", "Combat Reflexes", "Combat Trickery (disarm)", "Combat Trickery (knock down)", "Command", "Elementalism", "Familiar", "Fighting Style", "Leadership", "Loremastery", "Magical Engineering", "Magical Music", "Mystic Aura", "Naturalism", "Passing Without Trace", "Quiet Magic", "Precise Shooting", "Prestidigitation", "Running", "Sensing Power", "Skirmishing", "Soothsaying", "Swashbuckler", "Unflappable Casting", "Wakefulness", "Weapon Focus", "Weapon Finesse"]
 	if level in [1,2] and cclass in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
-		proflist.append(stellagama.random_choice(profs))
+		proflist.append(random.choice(profs))
 	elif level in [1, 2, 3] and cclass not in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
-		proflist.append(stellagama.random_choice(profs))
+		proflist.append(random.choice(profs))
 	if level in [3, 4] and cclass in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
 		for i in range (0,2):
-			proflist.append(stellagama.random_choice(profs))
+			proflist.append(random.choice(profs))
 	elif level==4 and cclass not in ["assassin", "vaultguard", "spellsword", "explorer", "fighter"]:
 		for i in range (0,2):
-			proflist.append(stellagama.random_choice(profs))
+			proflist.append(random.choice(profs))
 	proficiencies=", ".join(proflist)
 	return proficiencies #returns a list of class proficiencies
 	
@@ -190,34 +190,34 @@ def weapon_gen (cclass): #input character class
 	weapon generation
 	"""
 	if cclass in ["fighter", "spellsword"]:
-		return stellagama.random_choice(["Battle Axe", "Great Axe", "Hand Axe","Arbalest", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Club", "Flail", "Mace", "Morning Star", "Warhammer", "Javelin", "Pole Arm", "Spear", "Dagger", "Short Sword", "Sword", "Two-Handed Sword", "Staff", "Whip"])
+		return random.choice(["Battle Axe", "Great Axe", "Hand Axe","Arbalest", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Club", "Flail", "Mace", "Morning Star", "Warhammer", "Javelin", "Pole Arm", "Spear", "Dagger", "Short Sword", "Sword", "Two-Handed Sword", "Staff", "Whip"])
 	if cclass=="mage":
-		return stellagama.random_choice(["Staff", "Club", "Dagger", "Dart"])
+		return random.choice(["Staff", "Club", "Dagger", "Dart"])
 	if cclass=="cleric":
-		return stellagama.random_choice(["Warhammer", "Mace", "Club", "Morning Star", "Staff", "Sling"])
+		return random.choice(["Warhammer", "Mace", "Club", "Morning Star", "Staff", "Sling"])
 	if cclass in ["thief", "bard", "explorer", "nightblade"]:
-		return stellagama.random_choice(["Battle Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Club", "Flail", "Sap", "Mace", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Sword", "Whip"])
+		return random.choice(["Battle Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Club", "Flail", "Sap", "Mace", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Sword", "Whip"])
 	if cclass=="assassin":
-		return stellagama.random_choice(["Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Dagger", "Dagger", "Dagger", "Dagger", "Dagger", "Short Sword", "Short Sword", "Short Sword", "Sword"])
+		return random.choice(["Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Crossbow", "Composite Bow", "Longbow", "Shortbow", "Dagger", "Dagger", "Dagger", "Dagger", "Dagger", "Short Sword", "Short Sword", "Short Sword", "Sword"])
 	if cclass=="bladedancer":
-		return stellagama.random_choice(["Battle Axe", "Great Axe", "Hand Axe", "Dagger", "Sword", "Sword", "Sword", "Shortsword", "Shortsword", "Two-Handed Sword", "Two-Handed Sword"])
+		return random.choice(["Battle Axe", "Great Axe", "Hand Axe", "Dagger", "Sword", "Sword", "Sword", "Shortsword", "Shortsword", "Two-Handed Sword", "Two-Handed Sword"])
 	if cclass=="vaultguard":
-		return stellagama.random_choice(["Battle Axe", "Battle Axe", "Battle Axe", "Great Axe", "Great Axe", "Great Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Shortbow", "Club", "Flail", "Mace", "Warhammer", "Warhammer", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Short Sword", "Whip"])
+		return random.choice(["Battle Axe", "Battle Axe", "Battle Axe", "Great Axe", "Great Axe", "Great Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Hand Axe", "Arbalest", "Crossbow", "Composite Bow", "Shortbow", "Club", "Flail", "Mace", "Warhammer", "Warhammer", "Warhammer", "Javelin", "Spear", "Dagger", "Short Sword", "Short Sword", "Whip"])
 	if cclass=="craftpriest":
-		return stellagama.random_choice(["Battle Axe", "Great Axe", "Hand Axe", "Flail", "Mace", "Morning Star", "Warhammer"])
+		return random.choice(["Battle Axe", "Great Axe", "Hand Axe", "Flail", "Mace", "Morning Star", "Warhammer"])
 	else:
-		return stellagama.random_choice(["Staff", "Staff", "Staff", "Staff", "Club", "Club", "Club", "Club", "Dagger", "Dagger", "Dagger", "Dagger", "Dart", "Dart", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Meat Cleaver", "Meat Cleaver", "Crowbar", "Crowbar", "Shovel", "A Really Heavy Bell"])
+		return random.choice(["Staff", "Staff", "Staff", "Staff", "Club", "Club", "Club", "Club", "Dagger", "Dagger", "Dagger", "Dagger", "Dart", "Dart", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Pitchfork", "Meat Cleaver", "Meat Cleaver", "Crowbar", "Crowbar", "Shovel", "A Really Heavy Bell"])
 
 def armor_gen (cclass): #input character class
 	"""
 	armor generation
 	"""
 	if cclass in ["fighter", "spellsword", "cleric", "vaultguard", "craftpriest"]:
-		return stellagama.random_choice(["Leather Armor", "Scale Mail", "Scale Mail", "Chain Mail", "Chain Mail", "Chain Mail", "Banded Plate"])
+		return random.choice(["Leather Armor", "Scale Mail", "Scale Mail", "Chain Mail", "Chain Mail", "Chain Mail", "Banded Plate"])
 	if cclass in ["thief", "bard", "assassin", "bladedancer", "nightblade"]:
-		return stellagama.random_choice(["Clothes", "Clothes", "Hide Armor", "Leather Armor" ])
+		return random.choice(["Clothes", "Clothes", "Hide Armor", "Leather Armor" ])
 	if cclass == "explorer":
-		return stellagama.random_choice (["clothes", "Hide Armor", "Leather Armor", "Scale Mail", "Chain Mail"])
+		return random.choice (["clothes", "Hide Armor", "Leather Armor", "Scale Mail", "Chain Mail"])
 	if cclass == "mage":
 		return "Robes"
 	else:

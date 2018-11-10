@@ -1,6 +1,6 @@
 # henchgen.py
 # Henchman generator for the Adventurer Conqueror King System (ACKS).
-# v1.0, March 29th, 2018.
+# v1.1, November 10th, 2018.
 # This is open source code, feel free to use it for any purpose.
 # Contact the author at golan2072@gmail.com.
 
@@ -36,7 +36,7 @@ class character():
 		self.attribute_list=[self.strength,self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma] #turning abilities into a list
 		self.gold=10*stellagama.dice(3,6) #generate starting gold
 		self.sex=henchgenlib.sex_gen() #generate sex
-		self.race=henchgenlib.race_gen(self.constitution) #generate race
+		self.race=henchgenlib.race_gen(self.constitution, self.intelligence) #generate race
 		self.name=henchgenlib.name_gen(self.sex) #generate name
 		self.cclass=henchgenlib.charclass(self.strength, self.dexterity, self.constitution, self.intelligence, self.wisdom, self.charisma, self.sex, self.race, self.level) #choose character class
 		self.hp=henchgenlib.hp_gen(self.cclass, self.conmod, self.level) #generate hit points
